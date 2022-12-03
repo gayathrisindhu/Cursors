@@ -1,1 +1,16 @@
+Cursor Variables with REF CURSOR – guide you on how to use the cursor variable with ref cursor.
+DECLARE cursor_name CURSOR
+    FOR select_statement;
 
+OPEN cursor_name;
+
+FETCH NEXT FROM cursor INTO variable_list;
+
+WHILE @@FETCH_STATUS = 0  
+    BEGIN
+        FETCH NEXT FROM cursor_name;  
+    END;
+
+CLOSE cursor_name;
+
+DEALLOCATE cursor_name;
